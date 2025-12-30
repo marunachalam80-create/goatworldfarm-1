@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  nav {
+    background: #1e90ff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  section {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  #services ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #services li {
+    background: #f1f1f1;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #0a3d62;
+  }
+  
+  footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  /* Mobile Responsive */
+@media (max-width: 768px) {
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    header h1 {
+      font-size: 28px;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  
+    form {
+      width: 90%;
+    }
+  }
+  .whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #location iframe {
+    border-radius: 10px;
+    margin-top: 15px;
+  }
+  
