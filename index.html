@@ -1,87 +1,601 @@
 <!DOCTYPE html>
-<html lang="en">
+<ahtml lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GOAD WORLD</title>
-  <link rel="stylesheet" href="style.css">
-  <a href="https://wa.me/916369821336" class="whatsapp" target="_blank">
-    💬 Chat on WhatsApp
-  </a>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goat World Farm | Premium Goat Farm Equipment Tamil Nadu</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Mobile nav transition */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    #mobile-menu.open { max-height: 320px; }
+
+    /* Hero gradient overlay */
+    .hero-bg {
+      background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #e0f2f1 100%);
+    }
+
+    /* Product card hover */
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+    /* Green accent underline */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #16a34a;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    /* WhatsApp float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.5);
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    /* Offer section stripe */
+    .offer-stripe {
+      background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+      border-left: 6px solid #f59e0b;
+    }
+  </style>
 </head>
-<body>
 
-<!-- HEADER -->
-<header>
-  <h1>GOAD WORLD FORME</h1>
-  <p>Your Trusted Business Partner</p>
-</header>
+<body class="bg-gray-50 overflow-x-hidden">
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
 
-<!-- HOME -->
-<section id="home">
-  <h2>Welcome to GOAD WORLD</h2>
-  <p>We provide quality products and services to grow your business.</p>
-</section>
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-green-600 rounded-full flex items-center justify-center">
+          <i class="fa fa-leaf text-white text-lg"></i>
+        </div>
+        <span class="text-green-700 font-bold text-lg leading-tight">Goat World<br><span class="text-xs font-medium text-gray-500 -mt-1 block">Farm Equipment</span></span>
+      </a>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    GOAD WORLD is a professional business company focused on customer
-    satisfaction and quality service.
-  </p>
-</section>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html"      class="text-green-700 font-600 text-sm font-semibold border-b-2 border-green-600 pb-0.5">Home</a>
+        <a href="products.html"   class="text-gray-600 hover:text-green-700 text-sm font-medium transition">Products</a>
+        <a href="about.html"      class="text-gray-600 hover:text-green-700 text-sm font-medium transition">About</a>
+        <a href="contact.html"    class="text-gray-600 hover:text-green-700 text-sm font-medium transition">Contact</a>
+        <a href="account.html"    class="text-gray-600 hover:text-green-700 text-sm font-medium transition">Account</a>
+      </nav>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>Business Solutions</li>
-    <li>Product Supply</li>
-    <li>Customer Support</li>
-    <li>Online Services</li>
-  </ul>
-</section>
-<!-- LOCATION -->
-<section id="location">
-  <h2>Our Location</h2>
-  <p>Visit GOAD WORLD at our office</p>
+      <!-- Right: Cart + Hamburger -->
+      <div class="flex items-center gap-4">
+        <!-- Cart -->
+        <a href="cart.html" class="relative p-2 text-gray-700 hover:text-green-700 transition">
+          <i class="fa fa-shopping-cart text-xl"></i>
+          <span id="cartCount"
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+            0
+          </span>
+        </a>
+        <!-- Hamburger (mobile) -->
+        <button id="hamburger" class="md:hidden text-gray-700 hover:text-green-700 transition focus:outline-none" aria-label="Toggle menu">
+          <i class="fa fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
 
-  <iframe 
-    src="https://www.google.com/maps/@12.2127626,79.1730884,18z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
-    width="100%" 
-    height="300" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
-</section>
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+      <ul class="flex flex-col px-4 py-2">
+        <li><a href="index.html"    class="block py-3 text-green-700 font-semibold text-sm border-b border-gray-100">Home</a></li>
+        <li><a href="products.html" class="block py-3 text-gray-600 hover:text-green-700 text-sm border-b border-gray-100 transition">Products</a></li>
+        <li><a href="about.html"    class="block py-3 text-gray-600 hover:text-green-700 text-sm border-b border-gray-100 transition">About</a></li>
+        <li><a href="contact.html"  class="block py-3 text-gray-600 hover:text-green-700 text-sm border-b border-gray-100 transition">Contact</a></li>
+        <li><a href="account.html"  class="block py-3 text-gray-600 hover:text-green-700 text-sm transition">Account</a></li>
+      </ul>
+    </div>
+  </header>
 
-<!-- CONTACT FORM -->
-<section id="contact">
-  <h2>Contact Us</h2>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero-bg">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10">
 
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+      <!-- Text -->
+      <div class="flex-1 text-center md:text-left fade-up delay-1">
+        <span class="inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+          Trusted Across India
+        </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-4">
+          Premium Equipment<br>for <span class="text-green-600">Profitable</span> Goat Farming
+        </h1>
+        <p class="text-gray-500 text-base md:text-lg mb-6 max-w-md mx-auto md:mx-0">
+          Quality drinkers, shearing machines, and veterinary tools — powering goat farmers across India.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+          <a href="products.html"
+             class="bg-green-600 hover:bg-green-700 text-white font-semibold px-7 py-3 rounded-lg transition shadow-md shadow-green-200">
+            Shop Now &rarr;
+          </a>
+          <a href="about.html"
+             class="border-2 border-green-600 text-green-700 hover:bg-green-50 font-semibold px-7 py-3 rounded-lg transition">
+            Learn More
+          </a>
+        </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 GOAD WORLD | All Rights Reserved</p>
-</footer>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <i class="fa fa-truck text-green-600"></i> Pan-India Delivery
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <i class="fa fa-shield text-green-600"></i> Quality Guarantee
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <i class="fa fa-whatsapp text-green-600"></i> WhatsApp Support
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="flex-1 fade-up delay-2">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-green-200 rounded-3xl opacity-30 blur-2xl"></div>
+          <img src="images/logo-1.png"
+               alt="Goat on Indian farm"
+               class="relative w-full max-w-sm mx-auto rounded-2xl shadow-2xl object-cover aspect-square" />
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+              <i class="fa fa-star text-yellow-500"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-400 font-medium">Customer Rating</div>
+              <div class="text-sm font-bold text-gray-800">4.8 / 5 &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY PILLS ==================== -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-wrap gap-3 justify-center">
+      <span class="bg-green-600 text-white text-xs font-semibold px-4 py-2 rounded-full cursor-pointer">All Products</span>
+      <span class="bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-700 text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition">Drinkers</span>
+      <span class="bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-700 text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition">Shearing Machines</span>
+      <span class="bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-700 text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition">Veterinary Tools</span>
+      <span class="bg-gray-100 text-gray-600 hover:bg-green-50 hover:text-green-700 text-xs font-semibold px-4 py-2 rounded-full cursor-pointer transition">Feed Equipment</span>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PRODUCTS ==================== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="section-title text-2xl md:text-3xl font-bold text-gray-800 text-center mb-12">Featured Products</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Product 1 -->
+      <a href="product-details.html?id=1" class="product-card bg-white rounded-2xl shadow-md overflow-hidden group fade-up delay-1">
+        <div class="relative overflow-hidden">
+          <img src="images/goatwatetool2/1.png"
+               alt="Automatic Goat Drinker Bowl 4L"
+               class="w-full h-58 object-cover group-hover:scale-105 transition duration-300" />
+          <span class="absolute top-3 left-3 bg-green-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Bestseller</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-gray-800 text-sm leading-snug mb-1">Automatic Goat Drinker Bowl (4L)</h4>
+          <div class="text-yellow-400 text-xs mb-2">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+            <span class="text-gray-400 ml-1">(48)</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-green-700 font-bold text-base">&#8377;1,800</span>
+            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-lg transition" onclick="addToCart(event,1,'Automatic Goat Drinker Bowl (4L)',1800)">
+              <i class="fa fa-cart-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 2 -->
+      <a href="product-details.html?id=2" class="product-card bg-white rounded-2xl shadow-md overflow-hidden group fade-up delay-2">
+        <div class="relative overflow-hidden">
+          <img src="images/goatwatertool1/goatwater1-1.png"
+               alt="Automatic Goat Drinker 1L"
+               class="w-full h-58 object-cover group-hover:scale-105 transition duration-300" />
+          <span class="absolute top-3 left-3 bg-blue-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">New</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-gray-800 text-sm leading-snug mb-1">Automatic Goat Drinker (1L)</h4>
+          <div class="text-yellow-400 text-xs mb-2">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+            <span class="text-gray-400 ml-1">(31)</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-green-700 font-bold text-base">&#8377;999</span>
+            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-lg transition" onclick="addToCart(event,2,'Automatic Goat Drinker (1L)',999)">
+              <i class="fa fa-cart-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 3 -->
+      <a href="product-details.html?id=3" class="product-card bg-white rounded-2xl shadow-md overflow-hidden group fade-up delay-3">
+        <div class="relative overflow-hidden">
+          <img src="images/dreamer/d1-1.jpg"
+               alt="Shearing Machine 1200W"
+               class="w-full h-58 object-cover group-hover:scale-105 transition duration-300" />
+          <span class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Popular</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-gray-800 text-sm leading-snug mb-1">Shearing Machine 1200W</h4>
+          <div class="text-yellow-400 text-xs mb-2">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            <span class="text-gray-400 ml-1">(72)</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-green-700 font-bold text-base">&#8377;6,000</span>
+            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-lg transition" onclick="addToCart(event,3,'Shearing Machine 1200W',6000)">
+              <i class="fa fa-cart-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product 4 -->
+      <a href="product-details.html?id=4" class="product-card bg-white rounded-2xl shadow-md overflow-hidden group fade-up delay-4">
+        <div class="relative overflow-hidden">
+          <img src="images/dreamer/d2-1.jpg"
+               alt="ST-777 Hair Cutting Machine"
+               class="w-full h-58 object-cover group-hover:scale-105 transition duration-300" />
+          <span class="absolute top-3 left-3 bg-purple-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Pro</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-semibold text-gray-800 text-sm leading-snug mb-1">ST-777 Hair Cutting Machine</h4>
+          <div class="text-yellow-400 text-xs mb-2">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+            <span class="text-gray-400 ml-1">(59)</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-green-700 font-bold text-base">&#8377;7,999</span>
+            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-3 py-1.5 rounded-lg transition" onclick="addToCart(event,4,'ST-777 Hair Cutting Machine',7999)">
+              <i class="fa fa-cart-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- View All -->
+    <div class="text-center mt-10">
+      <a href="products.html"
+         class="inline-flex items-center gap-2 border-2 border-green-600 text-green-700 hover:bg-green-600 hover:text-white font-semibold px-8 py-3 rounded-lg transition">
+        View All Products <i class="fa fa-arrow-right text-sm"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BAR ==================== -->
+  <section class="bg-green-700 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-extrabold">5000+</div>
+        <div class="text-green-200 text-sm mt-1">Happy Farmers</div>
+      </div>
+      <div>
+        <div class="text-3xl font-extrabold">28</div>
+        <div class="text-green-200 text-sm mt-1">States Served</div>
+      </div>
+      <div>
+        <div class="text-3xl font-extrabold">50+</div>
+        <div class="text-green-200 text-sm mt-1">Products</div>
+      </div>
+      <div>
+        <div class="text-3xl font-extrabold">4.8&#9733;</div>
+        <div class="text-green-200 text-sm mt-1">Customer Rating</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OFFER SECTION ==================== -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="offer-stripe rounded-2xl overflow-hidden shadow-md">
+      <div class="flex flex-col md:flex-row items-center gap-0">
+        <div class="md:w-2/5 w-full">
+          <img src="images/animaldrenchinggun1-1.jpg"
+               alt="Animal Drenching Gun"
+               class="w-full h-70 md:h-82 object-cover" />
+        </div>
+        <div class="flex-1 p-8 md:p-12">
+          <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3">
+            Featured Deal
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">30ml Metal Animal Drenching Gun</h2>
+          <p class="text-gray-500 mb-2">Heavy-duty veterinary tool for accurate oral dosing in goats, sheep, and cattle.</p>
+          <ul class="text-sm text-gray-600 mb-6 space-y-1">
+            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-green-500"></i> Stainless steel nozzle</li>
+            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-green-500"></i> Easy grip handle</li>
+            <li class="flex items-center gap-2"><i class="fa fa-check-circle text-green-500"></i> Durable & reusable</li>
+          </ul>
+          <div class="flex items-center gap-4">
+            <span class="text-3xl font-extrabold text-green-700">&#8377;3,500</span>
+            <a href="product-details.html?id=5"
+               class="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-lg transition shadow">
+              Buy Now &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="section-title text-2xl md:text-3xl font-bold text-gray-800 text-center mb-12">Why Farmers Choose Us</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-green-50 border border-green-100">
+          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-truck text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">Pan-India Delivery</h4>
+            <p class="text-sm text-gray-500">We ship across all 28 states with reliable courier partners.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-blue-50 border border-blue-100">
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-shield text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">Quality Assurance</h4>
+            <p class="text-sm text-gray-500">Every product is tested and guaranteed for durability and performance.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-amber-50 border border-amber-100">
+          <div class="w-12 h-12 bg-amber-500 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-whatsapp text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">WhatsApp Support</h4>
+            <p class="text-sm text-gray-500">Get instant help and advice from our farming experts via WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-purple-50 border border-purple-100">
+          <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-refresh text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">Easy Returns</h4>
+            <p class="text-sm text-gray-500">Hassle-free return and replacement within 7 days of delivery.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-red-50 border border-red-100">
+          <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-rupee text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">Best Prices</h4>
+            <p class="text-sm text-gray-500">Factory-direct pricing with no middlemen — you save more.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 p-6 rounded-2xl bg-teal-50 border border-teal-100">
+          <div class="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa fa-users text-white text-lg"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-gray-800 mb-1">5000+ Farmers</h4>
+            <p class="text-sm text-gray-500">A growing community of satisfied goat farmers across India.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
+            <i class="fa fa-leaf text-white"></i>
+          </div>
+          <span class="text-white font-bold text-base">Goat World Farm</span>
+        </div>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Providing quality goat and farm equipment to farmers across India since 2018.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="products.html" class="hover:text-green-400 transition">Products</a></li>
+          <li><a href="about.html"    class="hover:text-green-400 transition">About Us</a></li>
+          <li><a href="contact.html"  class="hover:text-green-400 transition">Contact</a></li>
+          <li><a href="#"             class="hover:text-green-400 transition">Shipping Policy</a></li>
+          <li><a href="#"             class="hover:text-green-400 transition">Return Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Contact Us</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center gap-2">
+            <i class="fa fa-whatsapp text-green-400 text-lg"></i>
+            <a href="https://wa.me/916369821336" class="hover:text-green-400 transition">+91 63698 21336</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa fa-envelope text-green-400"></i>
+            <span>info@goatworldfarm.com</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fa fa-map-marker text-green-400 mt-0.5"></i>
+            <span>Tamil Nadu, India</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wide">Follow Us</h4>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.facebook.com/goatworldfarm/" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition">
+            <i class="fa fa-facebook text-white"></i>
+          </a>
+          <a href="https://www.instagram.com/goat_world_farm/" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-lg flex items-center justify-center transition">
+            <i class="fa fa-instagram text-white"></i>
+          </a>
+          <a href="https://youtube.com/@goat-world-farm" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-red-600 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
+            <i class="fa fa-youtube-play text-white"></i>
+          </a>
+          <a href="https://wa.me/916369821336" target="_blank" rel="noopener"
+             class="w-10 h-10 bg-green-600 hover:bg-green-700 rounded-lg flex items-center justify-center transition">
+            <i class="fa fa-whatsapp text-white"></i>
+          </a>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">Supporting farmers with reliable<br>veterinary tools and equipment.</p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-gray-500">
+        <span>&copy; 2026 Goat World Farm Equipment. All Rights Reserved.</span>
+        <span class="flex items-center gap-1">Made with <i class="fa fa-heart text-red-500 text-xs"></i> for Indian Farmers</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP FLOAT ==================== -->
+  <a href="https://wa.me/916369821336" target="_blank" rel="noopener" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fa fa-whatsapp text-white text-2xl"></i>
+  </a>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // ----- Mobile menu toggle -----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', function () {
+      mobileMenu.classList.toggle('open');
+      const icon = hamburger.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        const icon = hamburger.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // ----- Cart counter -----
+    function updateCartCount() {
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var count = 0;
+      cart.forEach(function (item) { count += (item.qty || 1); });
+      var el = document.getElementById('cartCount');
+      if (el) el.textContent = count;
+    }
+
+    // ----- Add to cart -----
+    function addToCart(e, id, name, price) {
+      e.preventDefault();
+      e.stopPropagation();
+      var cart = JSON.parse(localStorage.getItem('cart')) || [];
+      var existing = cart.find(function (i) { return i.id === id; });
+      if (existing) {
+        existing.qty = (existing.qty || 1) + 1;
+      } else {
+        cart.push({ id: id, name: name, price: price, qty: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount();
+
+      // Visual feedback
+      var btn = e.currentTarget;
+      var original = btn.innerHTML;
+      btn.innerHTML = '<i class="fa fa-check"></i> Added';
+      btn.classList.add('bg-green-800');
+      setTimeout(function () {
+        btn.innerHTML = original;
+        btn.classList.remove('bg-green-800');
+      }, 1200);
+    }
+
+    // ----- Init -----
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+  </script>
 
 </body>
 </html>
+
